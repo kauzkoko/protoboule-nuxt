@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@strudel/web": "^1.1.0",
+    "@strudel/webaudio": "^1.1.0",
+    "howler": "^2.2.4",
+    "nuxt": "^3.13.0",
+    "superdough": "^1.1.0",
+    "tone": "^15.0.4",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@vueuse/nuxt": "^11.1.0"
+  }
+}
