@@ -7,7 +7,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import { initStrudel, getAudioContext } from '@strudel/web';
+import { initStrudel, getAudioContext } from '@strudel/web/dist/index.mjs';
 
 onMounted(() => {
   initStrudel({

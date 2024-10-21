@@ -8,7 +8,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import { initStrudel, evaluate, hush } from '@strudel/web';
+import { initStrudel, evaluate, hush } from '@strudel/web/dist/index.mjs';
 
 onMounted(() => {
   initStrudel({

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { initStrudel, getAudioContext } from '@strudel/web'
+import { initStrudel, getAudioContext } from '@strudel/web/dist/index.mjs'
 import { ref, onMounted } from 'vue'
 
 const audioContextRef = ref<AudioContext | null>(null);

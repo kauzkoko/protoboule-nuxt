@@ -12,7 +12,7 @@
 <script setup>
 import * as THREE from 'three'
 import { useTresContext } from '@tresjs/core'
-import { initStrudel, getAudioContext } from '@strudel/web'
+import { initStrudel, getAudioContext } from '@strudel/web/dist/index.mjs'
 
 const { camera } = useTresContext()
 const boxRef = ref()

@@ -11,7 +11,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import { initStrudel, evaluate, hush } from '@strudel/web';
+import { initStrudel, evaluate, hush } from '@strudel/web/dist/index.mjs';
 
 const audioContext = ref(null);
 const audioStream = ref(null);

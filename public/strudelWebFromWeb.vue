@@ -7,7 +7,7 @@
 
 <script setup>
 const { onLoaded } = useScriptNpm({
-  packageName: '@strudel/web',
+  packageName: '@strudel/web/dist/index.mjs',
   file: '/dist/index.js',
   version: '1.0.3',
 })
