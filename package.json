@@ -10,16 +10,25 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@strudel/embed": "^1.1.0",
     "@strudel/web": "^1.1.0",
     "@strudel/webaudio": "^1.1.0",
+    "@tresjs/cientos": "^4.0.3",
+    "@tresjs/post-processing": "^0.7.1",
+    "gsap": "^3.12.5",
     "howler": "^2.2.4",
     "nuxt": "^3.13.0",
+    "sass": "^1.80.2",
+    "sass-loader": "^16.0.2",
     "superdough": "^1.1.0",
     "tone": "^15.0.4",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@nuxt/scripts": "^0.9.5",
+    "@tresjs/nuxt": "^3.0.7",
+    "@unocss/nuxt": "^0.63.4",
     "@vueuse/nuxt": "^11.1.0"
   }
 }

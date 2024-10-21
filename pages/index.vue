@@ -4,7 +4,7 @@
     <nav>
       <ul>
         <li v-for="page in pages" :key="page.path">
-          <NuxtLink :to="page.path">{{ page.name }}</NuxtLink>
+          <NuxtLink :to="page.path" no-prefetch>{{ page.name }}</NuxtLink>
         </li>
       </ul>
     </nav>
