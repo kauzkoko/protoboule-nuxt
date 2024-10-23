@@ -16,8 +16,15 @@ export default defineNuxtConfig({
     glsl: true,
   },
   app: {
-    router: {
-      prefetchLinks: false,
+    head: {
+      script: [
+        {
+          src: "/p5.min.js",
+        },
+        {
+          src: "/p5.sound.min.js",
+        },
+      ],
     },
   },
 })

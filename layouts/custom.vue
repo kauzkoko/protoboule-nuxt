@@ -1,13 +1,14 @@
 <template>
-  <NuxtLayout>
+  <div
+    class="w-screen h-screen flex justify-center items-center overflow-hidden"
+  >
     <NuxtPage />
-  </NuxtLayout>
+  </div>
 </template>
 
 <style>
 html,
-body,
-__nuxt {
+body {
   overflow: hidden;
   margin: 0 important!;
   padding: 0 important!;

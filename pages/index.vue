@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Welcome to My Nuxt 3 App</h1>
+    <p>Welcome to My Nuxt 3 App</p>
     <nav>
       <ul>
         <li v-for="page in pages" :key="page.path">

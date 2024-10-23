@@ -18,7 +18,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <h1>{{ error.statusCode }}</h1>
+    <h1>{{ error?.statusCode }}</h1>
     <p>Redirecting to home page in 2 seconds...</p>
     <NuxtLink to="/">Go back home</NuxtLink>
   </div>
