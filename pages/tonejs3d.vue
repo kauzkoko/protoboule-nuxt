@@ -6,8 +6,7 @@
 </template>
 
 <script setup>
-import * as Tone from 'tone';
-import { onMounted } from 'vue';
+import * as Tone from "tone";
 
 let synth;
 let panner;
@@ -25,6 +24,6 @@ onMounted(() => {
 });
 
 const playSound = () => {
-  synth.triggerAttackRelease('C4', 0.5);
+  synth.triggerAttackRelease("C4", 0.5);
 };
 </script>
