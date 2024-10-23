@@ -1,5 +1,5 @@
 <template>
-  <main class="ml-2px">
+  <main class="ml-2px m-0 p-0 transform-gpu scale-90">
     <P5 id="p5canvas" />
   </main>
 </template>
@@ -9,9 +9,24 @@ definePageMeta({
   layout: "custom",
 });
 
+let motion = false;
+onMounted(() => {
+  if (typeof DeviceMotionEvent.requestPermission === "function") {
+    document.body.addEventListener("click", function () {
+      DeviceMotionEvent.requestPermission()
+        .then(function () {
+          console.log("DeviceMotionEvent enabled");
+          motion = true;
+        })
+        .catch(function (error) {
+          console.warn("DeviceMotionEvent not enabled", error);
+        });
+    });
+  }
+});
+
 const sketch1 = useP5((p5) => {
   let heads = [];
-  let motion = false;
 
   class Dude {
     constructor(x = 0, y = 0) {
@@ -25,13 +40,16 @@ const sketch1 = useP5((p5) => {
     }
 
     display() {
-      let safeMouseX = p5.constrain(p5.mouseX, 0, p5.width);
-      let safeMouseY;
+      let safeMouseX, safeMouseY;
       if (motion && typeof p5.rotationY !== "undefined") {
-        // Map rotation to Y position, assuming rotation range of -90 to 90 degrees
-        safeMouseY = p5.map(p5.rotationY, -90, 90, 0, p5.height);
+        safeMouseY = p5.map(p5.rotationY, -30, 30, 0, p5.height);
       } else {
         safeMouseY = p5.constrain(p5.mouseY, 0, p5.height);
+      }
+      if (motion && typeof p5.rotationX !== "undefined") {
+        safeMouseX = p5.map(p5.rotationX, -30, 30, 0, p5.width);
+      } else {
+        safeMouseX = p5.constrain(p5.mouseX, 0, p5.width);
       }
       p5.push();
       p5.strokeWeight(7);
@@ -96,6 +114,7 @@ const sketch1 = useP5((p5) => {
   }
 
   p5.setup = () => {
+    p5.angleMode(p5.DEGREES);
     p5.createCanvas(400, 400);
     for (let stepper = 10; stepper > 0; stepper--) {
       for (let xIndex = 1; xIndex < stepper; xIndex++) {
@@ -108,20 +127,6 @@ const sketch1 = useP5((p5) => {
           );
         }
       }
-    }
-
-    if (typeof DeviceMotionEvent.requestPermission === "function") {
-      document.body.addEventListener("click", function () {
-        DeviceMotionEvent.requestPermission()
-          .then(function () {
-            console.log("DeviceMotionEvent enabled");
-
-            motion = true;
-          })
-          .catch(function (error) {
-            console.warn("DeviceMotionEvent not enabled", error);
-          });
-      });
     }
   };
 
